@@ -62,6 +62,18 @@ Route::middleware([
                 'cars' => new ListingCollection($cars)
             ]);
         })->name('index');
+
+
+        Route::get('/list', function () {
+            $cars = Listing::query()
+                ->where('category_id', 2)
+                ->get();
+
+            return Inertia::render('CarRentals/List',[
+                'cars' => new ListingCollection($cars)
+            ]);
+        })->name('list');
+
     });
 
     Route::prefix('motorbikes')->name('motorbikes.')->group(function () {
@@ -75,6 +87,16 @@ Route::middleware([
                 'scooters' => new ListingCollection($scooters)
             ]);
         })->name('index');
+
+        Route::get('/list', function () {
+            $scooters = Listing::query()
+                ->where('category_id', 3)
+                ->get();
+
+            return Inertia::render('Motorbikes/List',[
+                'scooters' => new ListingCollection($scooters)
+            ]);
+        })->name('list');
     });
 
     Route::get('/dashboard', function () {

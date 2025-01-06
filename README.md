@@ -29,3 +29,8 @@ open terminal cmd|powershell
 5. php artisan migrate
 6. php artisan db:seed
 7. npm run dev && php artisan serve
+
+
+### Learn
+to learn more about laravel visit this page
+https://bootcamp.laravel.com/

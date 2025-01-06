@@ -1,5 +1,6 @@
 <script setup>
 
+import { Link } from "@inertiajs/vue3";
 </script>
 
 <template>
@@ -24,7 +25,7 @@
                 </div>
 
                 <div class="flex items-end">
-                    <button class="rounded-md bg-blue-500 px-5 py-3 text-white font-medium">Search</button>
+                    <Link :href="route('motorbikes.list')" class="rounded-md bg-blue-500 px-5 py-3 text-white font-medium">Search</Link>
                 </div>
             </div>
         </div>
